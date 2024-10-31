@@ -6,11 +6,49 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="min-h-screen p-2.5 bg-black" >
+<body class="min-h-screen p-2.5 bg-black font" >
   <div id="cont" class="grid grid-cols-2  ">
-     <h1 class=" text-5xl font-extrabold uppercase  text-teal-400">ToDo-List</h1>
+     <h1 class=" text-2xl font-extrabold uppercase  text-teal-400">ToDo-List</h1>
      <div class="text-teal-400 flex justify-end items-center">icons</div>
   </div>
-  <button>Add a Task</button>
+  <div class=" flex justify-center content-center max-w-full max-h-20 m-10">
+     <button class="bg-teal-400 rounded-full font-inherit font-semibold cursor-pointer text-black text-2xl w-[420px] flex justify-center content-center ml-10">Add a Task</button>
+  </div>
+  <div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
+    <div class="text-teal-400 flex justify-between items-center">
+      <span>ToDo</span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+      </svg>
+  </div>
+    <div class="max-w-[420px] max-h-full text-white w-[420px]">
+
+    </div>
+  </div>
+  <div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
+    <div class="text-teal-400 flex justify-between items-center">
+        <span>Doing</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+        </svg>
+    </div>
+    <div class="max-w-[420px] max-h-full text-white text-sm break-words w-[420px]">
+        
+    </div>
+</div>
+
+<div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
+    <div class="text-teal-400 flex justify-between items-center">
+        <span>Done</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+            <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+        </svg>
+    </div>
+    <div class="max-w-[420px] max-h-full text-white text-sm break-words w-[420px]">
+        
+    </div>
+</div>
+
+ <script src="index.js"></script>
 </body>
 </html> 

@@ -6,3 +6,14 @@
     display: grid;
     grid-template-columns: 200px 1fr;
 } */
+ /* .place{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 27px 1fr; 
+    padding: 80px;
+    margin-top: -50px;
+    gap: 10px;
+ }
+ .first{
+    grid-area: 1 / 1 / 2 / 2;
+ } */

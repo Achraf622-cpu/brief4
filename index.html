@@ -8,9 +8,11 @@
 </head>
 <body class="min-h-screen p-2.5 bg-black font">
   <div id="cont" class="grid grid-cols-2">
-    <h1 class="text-2xl font-extrabold uppercase text-teal-400">ToDo-List</h1>
-    <div class="text-teal-400 flex justify-end items-center">icons</div>
+    <h1 class=" font-extrabold uppercase text-teal-400 text-5xl">ToDo-List </h1>
+    <div class="text-teal-400 flex justify-end items-center text-5xl">icons </div>
   </div>
+  <br>
+  <hr>
   <div class="flex justify-center content-center max-w-full max-h-20 m-10">
     <button id="add-task-btn" class="bg-teal-400 rounded-full font-inherit font-semibold cursor-pointer text-black text-2xl w-[420px] flex justify-center content-center ml-10">Add a Task</button>
   </div>
@@ -42,7 +44,7 @@
       <form id="task-form">
         <div class="mb-4">
           <label class="block text-gray-700 font-semibold mb-2" for="task-title">Title</label>
-          <input id="task-title" type="text" class="w-full p-2 border rounded" required>
+          <input id="task-title" type="text" class="w-full p-2 border rounded" required autocomplete="off">
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 font-semibold mb-2" for="task-desc">Description</label>

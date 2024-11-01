@@ -11,51 +11,31 @@
     <h1 class="text-2xl font-extrabold uppercase text-teal-400">ToDo-List</h1>
     <div class="text-teal-400 flex justify-end items-center">icons</div>
   </div>
-
   <div class="flex justify-center content-center max-w-full max-h-20 m-10">
     <button id="add-task-btn" class="bg-teal-400 rounded-full font-inherit font-semibold cursor-pointer text-black text-2xl w-[420px] flex justify-center content-center ml-10">Add a Task</button>
   </div>
 
-  
-  <div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
-    <div class="text-teal-400 flex justify-between items-center">
-      <span>ToDo</span>
-      <svg class="toggle-icon cursor-pointer" data-toggle="section-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
-      </svg>
-    </div>
-    <div class="toggle-section max-w-[420px] max-h-full text-white text-sm break-words w-[420px] hidden" data-toggle="section-1">
-      Hallooooo
-    </div>
-  </div>
 
- 
-  <div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
-    <div class="text-teal-400 flex justify-between items-center">
-      <span>Doing</span>
-      <svg class="toggle-icon cursor-pointer" data-toggle="section-2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
-      </svg>
+
+  <div class="place grid grid-cols-3 gap-4 p-20 -mt-12">
+    <div id="todo-section" class="border p-4 rounded text-center bg-gray-800">
+      <h1 class="text-teal-400">ToDo <hr></h1>
+      <ul id="todo-list" class="min-h-[150px]" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
     </div>
-    <div class="toggle-section max-w-[420px] max-h-full text-white text-sm break-words w-[420px] hidden" data-toggle="section-2">
-      ouiiiiiiiiiiii
+    <div id="doing-section" class="border p-4 rounded text-center bg-gray-800">
+      <h1 class="text-teal-400">Doing <hr></h1>
+      <ul id="doing-list" class="min-h-[150px]" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
     </div>
-  </div>
+    <div id="done-section" class="border p-4 rounded text-center bg-gray-800">
+      <h1 class="text-teal-400">Done <hr></h1>
+      <ul id="done-list" class="min-h-[150px]" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+    </div>
+  </div>  
+
+
+
 
   
-  <div class="grid grid-rows-[25px_1fr] max-h-full max-w-full">
-    <div class="text-teal-400 flex justify-between items-center">
-      <span>Done</span>
-      <svg class="toggle-icon cursor-pointer" data-toggle="section-3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-          <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
-      </svg>
-    </div>
-    <div class="toggle-section max-w-[420px] max-h-full text-white text-sm break-words w-[420px] hidden" data-toggle="section-3">
-      doneee
-    </div>
-  </div>
-
-
   <div id="task-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
     <div class="bg-white rounded-lg p-6 max-w-lg w-full">
       <h2 class="text-xl font-bold text-gray-800 mb-4">Add a New Task</h2>
@@ -78,7 +58,7 @@
         </div>
         <div class="flex justify-end">
           <button type="button" id="close-modal" class="mr-4 px-4 py-2 bg-gray-300 rounded">Cancel</button>
-          <button type="submit" class="px-4 py-2 bg-teal-400 text-white rounded">Add Task</button>
+          <button type="submit" class="px-4 py-2 bg-teal-400 text-white rounded" onclick="AddTask()">Add Task</button>
         </div>
       </form>
     </div>

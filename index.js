@@ -16,6 +16,7 @@ closeModal.addEventListener('click', () => {
 
 function AddTask() {
   let li = document.createElement("li");
+  li.classList.add("border", "mt-4")
   li.setAttribute("draggable", "true");
   li.id = 'task-' + taskCounter;
   taskCounter++; 
@@ -24,7 +25,7 @@ function AddTask() {
 
   let taskTitle = document.createElement("h3");
   taskTitle.textContent = inputBoxTitle.value;
-  taskTitle.classList.add("font-bold", "text-teal-400");
+  taskTitle.classList.add("font-bold", "text-white", "text-2xl", );
 
   let taskDesc = document.createElement("p");
   taskDesc.textContent = inputBoxDesc.value;
@@ -38,7 +39,7 @@ function AddTask() {
   } else if (taskPriority === "important") {
     li.classList.add("bg-yellow-500");
   } else if (taskPriority === "very-important") {
-    li.classList.add("bg-red-500");
+    li.classList.add("bg-red-950");
   }
 
 
@@ -49,8 +50,8 @@ function AddTask() {
 
   let deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
-  deleteButton.classList.add("bg-red-500", "text-white", "rounded", "px-2", "ml-2");
-  deleteButton.addEventListener("click", ()=> Task(li));
+  deleteButton.classList.add("bg-rose-900", "text-white", "rounded", "px-2", "ml-2");
+  deleteButton.addEventListener("click", ()=> deleteTask(li));
 
   li.appendChild(taskTitle);
   li.appendChild(taskDesc);
@@ -62,6 +63,7 @@ function AddTask() {
   inputBoxDesc.value = '';
   TaskPriority.value = 'non-important';
   modal.classList.add('hidden');
+  updateCounters();
 }
 
 
@@ -85,7 +87,7 @@ function editTask(taskItem){
     taskItem.querySelector("h3").textContent = inputBoxTitle.value;
     taskItem.querySelector("p").textContent = inputBoxDesc.value;
 
-    taskItem.classList.remove("bg-green-500", "bg-yellow-500", "bg-red-5000");
+    taskItem.classList.remove("bg-green-500", "bg-yellow-500", "bg-red-950");
     const newPriority = TaskPriority.value;
 
 
@@ -94,7 +96,7 @@ function editTask(taskItem){
     } else if (newPriority === "important") {
       taskItem.classList.add("bg-yellow-500");
     } else if (newPriority === "very-important") {
-      taskItem.classList.add("bg-red-500");
+      taskItem.classList.add("bg-red-950");
     }
 
 
@@ -105,11 +107,14 @@ function editTask(taskItem){
 
     submitButton.textContent = "Add Task";
     submitButton.onclick = AddTask;
+
+    updateCounters();
   };
 }
 
 function deleteTask(taskItem){
   taskItem.remove();
+  updateCounters();
 }
 
 function allowDrop(event) {
@@ -127,5 +132,14 @@ function drop(event) {
 
   if (event.target.tagName === 'UL' || event.target.tagName === 'LI') {
     event.target.appendChild(taskItem);
+    updateCounters();
   }
 }
+
+function updateCounters(){
+  document.getElementById("todo-section-count").textContent = document.getElementById("todo-list").children.length;
+  document.getElementById("doing-section-count").textContent = document.getElementById("doing-list").children.length;
+  document.getElementById("done-section-count").textContent = document.getElementById("done-list").children.length;
+}
+
+updateCounters();
